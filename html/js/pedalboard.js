@@ -347,7 +347,6 @@ JqueryClass('pedalboard', {
             var screenX = ev.pageX - self.parent().offset().left
             var screenY = ev.pageY - self.parent().offset().top
 
-            console.log('wheel', newScale, canvasX, canvasY, screenX, screenY, 0)
             self.pedalboard('zoom', newScale, canvasX, canvasY, screenX, screenY, 0)
         })
 
@@ -836,8 +835,6 @@ JqueryClass('pedalboard', {
             var newScale = scale * e.pageD / start.pageD
             newScale = Math.min(self.data('maxScale'), newScale)
             newScale = Math.max(self.data('minScale'), newScale)
-            console.log( 'drag', scale, canvasX, canvasY, 
-                             e.pageX - self.parent().offset().left, e.pageY - self.parent().offset().top, 0 )
             self.pedalboard( 'zoom', newScale, canvasX, canvasY, 
                              e.pageX - self.parent().offset().left, e.pageY - self.parent().offset().top, 0 )
         }
